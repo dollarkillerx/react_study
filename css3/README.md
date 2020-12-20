@@ -64,3 +64,57 @@ div::hover {
 - `vh vw` 把整个屏幕分成100份
 	- `100vh` 高度整个屏幕大小
 	- `100vw` 宽度
+
+## 图片 资源处理
+- obhject-fit  `demo13`
+
+## 媒体查询 `demo14`
+```
+@media screen and (max-width: 800px) {
+			section {
+				float: none;
+				width: 100%;
+			}
+		}
+```
+
+## Transform `demo15`
+- 水平居中
+```
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+```
+- 垂直居中
+```
+				top: 50%;
+				transform: translateY(-50%);
+```
+
+## Filexbox 布局   `demo16`
+![](./s8.jpg)
+![](./s9.jpg)
+
+### 父亲项目可设置属性
+![](./s9_1.jpg)
+![](./s9_2.jpg)
+![](./s9_3.jpg)
+![](./s9_4.jpg)
+![](./s9_5.jpg)
+![](./s9_6.jpg)
+
+### 子项目可设置属性
+![](./s10_1.jpg)
+![](./s10_2.jpg)
+![](./s10_3.jpg)
+![](./s10_4.jpg)
+![](./s10_5.jpg)
+![](./s10_6.jpg)
+
+
+## 网站布局
+- 卡片  `demo18`
+- 圣杯  `demo19`
+- 固定头部布局  `demo20`
+- 固定尾部布局  `demo21`
+- 实战 `demo22`

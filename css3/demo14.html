@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			head,body {
+				margin: 0;
+				padding: 0;
+			}
+			header {
+				text-align: center;
+				height: 200px;
+				background-color: #FFB6C1;
+				line-height: 200px;
+				color: white;
+				font-size: 80px;
+			}
+			
+			section {
+				height: 600px;
+				width: 25%;
+				background-color: #7FFFD4;
+				float: left;
+				text-align: center;
+				line-height: 600px;
+				color: white;
+				font-size: 40px;
+			}
+			
+			section:nth-child(1) {
+				background-color: #2E8B57;
+			}
+			section:nth-child(2) {
+				background-color: #808080;
+			}
+			section:nth-child(3) {
+				background-color: #ADD8E6;
+			}
+			section:nth-child(4) {
+				background-color: #FF69B4;
+			}
+			
+			@media screen and (max-width: 800px) {
+				section {
+					float: none;
+					width: 100%;
+				}
+			}
+		</style>
+		
+	</head>
+	<body>
+		<header>Header</header>
+		<main>
+			<section>Section - 1</section>
+			<section>Section - 2</section>
+			<section>Section - 3</section>
+			<section>Section - 4</section>
+		</main>
+		
+	</body>
+</html>
