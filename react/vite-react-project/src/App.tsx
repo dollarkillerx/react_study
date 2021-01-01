@@ -1,32 +1,23 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
-import './App.css'
+import RobotData from './mockdata/robots.json'
+import Robot from './components/Robot'
+import styles from './App.module.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount(count => count + 1)}>count is: {count}</button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React 卡哇伊
-        </a>
-      </header>
-    </div>
-  )
+   <div className={styles.app}>
+     <div className={styles.robotList}>
+      {
+          RobotData.map( (r) => (
+            <Robot id={r.id} email={r.email} name={r.name}/>
+          ))
+        }
+   </div>
+   </div>
+  );  
 }
 
 export default App

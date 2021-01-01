@@ -42,3 +42,7 @@ yarn config set disturl https://npm.taobao.org/dist --global
   "include": ["src"]
 }
 ```
+
+### 插件
+- css提示 `yarn add typescript-plugin-css-modules --save-dev`
+- 优雅的css `yarn add @emotion/css`
