@@ -16,3 +16,11 @@
 .vscode
 
 typescript/demo3/node_modules/
+react/my-app/node_modules/
+react/my-app-ts/node_modules/
+react/vite-react-project/node_modules/
+
+
+react/my-app/build/
+react/my-app-ts/build/
+react/vite-react-project/dist/
