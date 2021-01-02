@@ -18,9 +18,13 @@
 typescript/demo3/node_modules/
 react/my-app/node_modules/
 react/my-app-ts/node_modules/
+react/my-app-ts-func/node_modules/
 react/vite-react-project/node_modules/
 
 
 react/my-app/build/
 react/my-app-ts/build/
+react/my-app-ts-func/build/
 react/vite-react-project/dist/
+.vscode
+.idea
