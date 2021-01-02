@@ -4,6 +4,7 @@ import styles from './App.module.css'
 import logo from './assets/images/logo.svg'
 import {css} from '@emotion/css'
 import ShoppingCart from './components/ShoppingCart'
+import RobotDiscount from "./components/RobotDiscount";
 
 interface Props {
 }
@@ -69,8 +70,11 @@ const App: React.FC = (props) => {
                     (
                         <div className={styles.robotList}>
                             {
-                                robotGallery.map((r) => (
-                                    <Robot id={r.id} email={r.email} name={r.name}/>
+                                robotGallery.map((r,i) => (
+                                    (i %2 == 0)?
+                                        <Robot id={r.id} email={r.email} name={r.name}/>
+                                        :
+                                        <RobotDiscount id={r.id} email={r.email} name={r.name}/>
                                 ))
                             }
                         </div>
