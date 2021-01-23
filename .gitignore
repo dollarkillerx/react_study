@@ -21,6 +21,7 @@ react/my-app-ts/node_modules/
 react/my-app-ts-func/node_modules/
 react/vite-react-project/node_modules/
 react-travel/node_modules/
+react-travel-reducer/node_modules/
 
 
 react/my-app/build/
@@ -28,5 +29,6 @@ react-travel/build/
 react/my-app-ts/build/
 react/my-app-ts-func/build/
 react/vite-react-project/dist/
+
 .vscode
 .idea
