@@ -321,3 +321,7 @@ const RobotDiscount: React.FC<RobotProps> = ({id, name, email}) => {  // es7语�
 
 ### 瓦
 - `setState` 异步更新 同步执行 
+
+#### Default
+- react在传递组件时会默认传递 `<Route path={"/login"} component={SignInPage}/>`
+  - `historyt` `location` `match`
