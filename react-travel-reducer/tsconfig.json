@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "noImplicitAny": false, // 不需要显示声明变量类型any
     "target": "es5",
     "lib": [
       "dom",
