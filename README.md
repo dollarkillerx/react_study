@@ -325,3 +325,14 @@ const RobotDiscount: React.FC<RobotProps> = ({id, name, email}) => {  // es7语�
 #### Default
 - react在传递组件时会默认传递 `<Route path={"/login"} component={SignInPage}/>`
   - `historyt` `location` `match`
+  
+
+### react router
+- `yarn add react-router-dom`
+- `yarn add @types/react-router-dom --save-dev`  
+
+### redux
+- `yarn add redux`
+
+### i18n
+- `yarn add react-i18next i18next`

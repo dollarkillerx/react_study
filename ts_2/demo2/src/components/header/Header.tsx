@@ -4,28 +4,66 @@ import {css} from "@emotion/css";
 import {Button, Dropdown, Input, Layout, Menu, Typography} from "antd";
 import {GlobalOutlined} from "@ant-design/icons";
 import logo from "../../assets/logo.svg";
+import {useHistory} from "react-router-dom"
+import store from "../../redux/store"
+import {useState,useEffect} from "react";
+import {LanguageState} from "../../redux/languageReducer";
+import {useTranslation} from "react-i18next"
 
-export const Header:React.FC= () => {
+interface langState extends LanguageState {
+}
+
+export const Header: React.FC = () => {
+    const i18 = useTranslation()
+
+    const [langState, setLangState] = useState<langState>();
+
+    const history = useHistory()
+    let st = store.getState()
+
+    useEffect(()=>{
+        setLangState(()=>{
+            console.log(st)
+            return {languageList: st.languageList, language: st.language}
+        })
+    },[])
+
+    store.subscribe(() => {
+        const st = store.getState()
+        setLangState({languageList: st.languageList, language: st.language})
+    })
+
+    const menuClickHandler = (e) => {
+        const action = {
+            type: "change_language",
+            payload: e.key
+        }
+
+        store.dispatch(action)
+    }
+
     return <div>
         <div className={styles['app-header']}>
             {/*top-header*/}
             <div className={styles['top-header']}>
-                <div className={css`width: 88%; margin: 0 auto`}>
-                    <Typography.Text>让旅游更幸福</Typography.Text>
+                <div className={css`width: 88%;
+                  margin: 0 auto`}>
+                    <Typography.Text>{i18.t("header.slogan")}</Typography.Text>
                     <Dropdown.Button className={css`margin-left: 15px`}
                                      overlay={
                                          <Menu>
-                                             <Menu.Item>中文</Menu.Item>
-                                             <Menu.Item>English</Menu.Item>
+                                             {langState?.languageList.map(k => (
+                                                 <Menu.Item key={k.code} onClick={menuClickHandler}>{k.name}</Menu.Item>
+                                             ))}
                                          </Menu>
                                      }
                                      icon={<GlobalOutlined/>}
                     >
-                        语言
+                        {langState?.language === "en" ? "English" : "中文"}
                     </Dropdown.Button>
                     <Button.Group className={styles["buttons-group"]}>
-                        <Button>注册</Button>
-                        <Button>登录</Button>
+                        <Button onClick={() => history.push("/signIn")}>注册</Button>
+                        <Button onClick={() => history.push("/register")}>登录</Button>
                     </Button.Group>
                 </div>
             </div>

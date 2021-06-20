@@ -1,21 +1,20 @@
 import React from 'react';
 import styles from './App.module.css'
-import {Footer, Header} from "./components";
-import {Row, Col} from "antd";
-import {css} from "@emotion/css";
+import {HomePage, Register, SignInPage,DetailPage} from "./pages";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 function App() {
     return (
         <div className={styles.App}>
-            <Header/>
-            <div className={styles['page-content']}>
-                <Row className={css`margin-top: 20px`}>
-                    <Col span={}>
-
-                    </Col>
-                </Row>
-            </div>
-            <Footer/>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route path="/signIn" component={SignInPage}/>
+                    <Route path="/register" component={Register}/>
+                    <Route path="/detail/:touristRouterID" component={DetailPage}/>
+                    <Route render={()=> <h1>404 Not Found</h1>} />
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 }
